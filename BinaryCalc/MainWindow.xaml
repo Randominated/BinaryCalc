@@ -1,0 +1,68 @@
+﻿<Window x:Class="BinaryCalc.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Binary Calculator"
+        Width="800"
+        Height="600">
+
+    <Grid Name="mainCanvas" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--I/O Label-->
+        <Viewbox HorizontalAlignment="Right" Grid.ColumnSpan="4">
+            <TextBlock Name="ioContentTB" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5"/>
+        </Viewbox>
+            
+        <!--Buttons-->
+        <Button Name="clearEntry" Click="clearEntry_Click" ToolTip="Clear the current entry" Grid.Row="1" Margin="5">
+            <Viewbox>
+                <TextBlock Text="CE" Margin="2"></TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Name="clearAll" Click="clearAll_Click" ToolTip="Reset; clears memory" Grid.Row="2" Margin="5">
+            <Viewbox>
+                <TextBlock Text="AC" Margin="2"></TextBlock>
+            </Viewbox>
+        </Button>
+
+        <Button Name="inputOne" Click="inputOne_Click" ToolTip="Enter a one" Grid.Row="1" Grid.Column="1" Margin="5">
+            <Viewbox>
+                <TextBlock Text="1" Margin="2"></TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Name="inputZero" Click="inputZero_Click" ToolTip="Enter a Zero" Grid.Column="1" Grid.Row="2" Margin="5">
+            <Viewbox>
+                <TextBlock Text="0" Margin="2"></TextBlock>
+            </Viewbox>
+        </Button>
+
+        <Button Name="opAdd" Click="opAdd_Click" ToolTip="Trigger an addition" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" Margin="5">
+            <Viewbox>
+                <TextBlock Text="+" Margin="2"></TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Name="opSub" Click="opSub_Click" ToolTip="Trigger a subtraction" Grid.Row="1" Grid.Column="3" Margin="5">
+            <Viewbox>
+                <TextBlock Text="-" Margin="2"></TextBlock>
+            </Viewbox>
+        </Button>
+        <Button Name="opEquals" Click="opEquals_Click" ToolTip="Complete calculation" Grid.Row="2" Grid.Column="3" Margin="5">
+            <Viewbox>
+                <TextBlock Text="=" Margin="2"></TextBlock>
+            </Viewbox>
+        </Button>
+
+    </Grid>
+
+</Window>
